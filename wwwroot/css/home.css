@@ -1,0 +1,151 @@
+body {
+    position: relative;
+    background-color: #ebebeb; /* Background color */
+    color: #393737;
+    height: 100vh; /* Make sure the body takes full viewport height */
+    margin: 0; /* Remove default margin */
+    padding-bottom: 50px; /* Add padding to the bottom to prevent content from overlapping the footer */
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+#nav {
+    background-color: #dbdbdb;
+    padding: 10px 0; /* Vertical padding */
+    position: fixed; /* Fix the navbar at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    border: 1px solid #929292;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px 5px #ccc;
+    display: flex; /* Add flexbox to align content */
+    justify-content: space-between; /* Space between links and theme toggler */
+    align-items: center; /* Center vertically */
+}
+
+#nav-list {
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center the items */
+}
+
+#nav-list a {
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    font-size: 16px; /* Font size for the links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+#nav-list a:hover {
+    text-decoration: underline;
+    color: #929292; /* Lighter color on hover */
+}
+
+#nav-list li {
+    margin: 0 15px; /* Space out the list items */
+}
+
+#theme-toggler {
+    margin-right: 20px; /* Spacing on the right */
+}
+
+#toggle-switch {
+    display: none; /* Hide the default checkbox */
+}
+
+#toggle-label {
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+}
+
+#title {
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#description {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#get-started-button {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ebebeb;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    transition: all 0.2s ease;
+}
+
+#get-started-button:hover {
+    background-color: #dfdede;
+}
+
+#footer {
+    background-color: #dbdbdb; /* Dark background for the footer */
+    color: #333; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Vertical padding */
+    position: fixed; /* Fix the footer at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* Dark theme adjustments for navbar and footer */
+body.dark-theme #nav {
+    background-color: #444;
+    border-color: #666;
+    box-shadow: none;
+}
+
+body.dark-theme #nav-list a {
+    color: #fff;
+}
+
+body.dark-theme #get-started-button {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #444;
+    border: 1px solid #000000;
+    color: #ebebeb;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    transition: all 0.2s ease;
+}
+
+body.dark-theme #get-started-button:hover {
+    background-color: #333;
+}
+
+body.dark-theme #footer {
+    background-color: #222;
+    color: #ebebeb;
+}

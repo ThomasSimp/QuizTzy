@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="~/css/home.css" />
+</head>
+<body>
+    <nav id="nav">
+        <ul id="nav-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Quiz/Index">Quiz</a></li>
+            <li><a href="/About">About</a></li>
+            <li><a href="/Contact">Contact</a></li>
+        </ul>
+        <div id="theme-toggler">
+            <input type="checkbox" id="toggle-switch">
+            <label for="toggle-switch" id="toggle-label">🌞</label>
+        </div>
+    </nav>
+    <section id="intro">
+        <h1 id="title">QuizTzy</h1>
+        <p id="description">
+            Welcome to <strong>QuizTzy</strong> – your go-to for thrilling quiz challenges! Test your knowledge with engaging questions and a sleek interface. Dive in and see how you score!
+        </p>
+        <button id="get-started-button">Get started</button>
+        <script>
+            document.getElementById('get-started-button').addEventListener('click', function() {
+                window.location.href = '/Quiz/Index';
+            });
+
+            const toggleSwitch = document.getElementById('toggle-switch');
+            const themeLabel = document.getElementById('toggle-label');
+
+            toggleSwitch.addEventListener('change', function() {
+                if (toggleSwitch.checked) {
+                    document.body.classList.add('dark-theme');
+                    themeLabel.textContent = '🌙'; // Dark mode icon
+                } else {
+                    document.body.classList.remove('dark-theme');
+                    themeLabel.textContent = '🌞'; // Light mode icon
+                }
+            });
+        </script>
+    </section>
+    <footer id="footer">
+        <p>&copy; 2024 QuizTzy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

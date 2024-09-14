@@ -1,0 +1,24 @@
+@model QuizTzy.Models.Question[]
+
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+<h1>Quiz Time!</h1>
+
+<form method="post" action="/Quiz/SubmitAnswers">
+    @for (var i = 0; i < Model.Length; i++)
+    {
+        <div>
+            <label>@Model[i].Text</label>
+            @for (var j = 0; j < Model[i].Options.Length; j++)
+            {
+                <div>
+                    <input type="radio" name="answers[@i]" value="@j" />
+                    <label>@Model[i].Options[j]</label>
+                </div>
+            }
+        </div>
+    }
+    <button type="submit">Submit</button>
+</form>

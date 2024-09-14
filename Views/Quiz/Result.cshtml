@@ -1,0 +1,27 @@
+@model QuizTzy.Models.ResultViewModel
+
+@{
+    ViewData["Title"] = "Quiz Result";
+}
+
+<h1>Your Results</h1>
+<p>Correct Answers: @Model.CorrectCount out of @Model.TotalCount</p>
+
+@if (Model.WrongAnswers.Any())
+{
+    <h2>Incorrect Answers</h2>
+    <ul>
+        @foreach (var wrongAnswer in Model.WrongAnswers)
+        {
+            <li>
+                <strong>@wrongAnswer.Question.Text</strong><br />
+                Your Answer: @wrongAnswer.Question.Options[wrongAnswer.UserAnswer]<br />
+                Correct Answer: @wrongAnswer.Question.Options[wrongAnswer.Question.CorrectOption]
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Congratulations! All your answers are correct.</p>
+}
